@@ -169,9 +169,16 @@ p {
 
 /* button on home page */
 
-.operation-btn {
+.Tilt {
     height: 30vh;
     width: 30vh;
+    transform-style: preserve-3d;
+}
+
+.operation-btn {
+    transform: translateZ(100px);
+    height: 100%;
+    width: 100%;
     display: grid;
     align-items: center;
     justify-content: center;
