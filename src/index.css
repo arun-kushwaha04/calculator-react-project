@@ -140,8 +140,41 @@ p {
 
 /* home page */
 
+.particles {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
 .home {
     width: 100vw;
     height: 100vh;
+    padding: 2rem;
     background-color: var(--clr-purple-1);
+}
+
+.home>h1 {
+    color: var(--clr-grey-8);
+    text-align: center;
+}
+
+.home>div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 5rem;
+    padding: 2rem;
+}
+
+
+/* button on home page */
+
+.operation-btn {
+    height: 30vh;
+    width: 30vh;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background: rgba(51, 35, 93, 0.55);
+    border-radius: 10px;
 }
