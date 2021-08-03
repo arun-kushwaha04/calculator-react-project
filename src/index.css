@@ -38,6 +38,7 @@ Variables
     --clr-orange: #ff914d;
     --clr-black: #222;
     /* purple color for wesite */
+    --clr-purple-0: #d2c0fd;
     --clr-purple-1: #4d3d76;
     --clr-purple-2: #392767;
     --clr-purple-3: #33235d;
@@ -65,13 +66,17 @@ Global Styles
     box-sizing: border-box;
 }
 
+html {
+    font-size: 10px;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     background: var(--clr-grey-10);
     color: var(--clr-grey-1);
     line-height: 1.5;
     overflow: hidden;
-    font-size: 0.875rem;
+    font-size: 5px;
 }
 
 ul {
@@ -142,19 +147,28 @@ p {
 
 .particles {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
+    background-color: var(--clr-purple-1);
+    z-index: -2;
 }
 
 .home {
     width: 100vw;
     height: 100vh;
     padding: 2rem;
-    background-color: var(--clr-purple-1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: transparent;
+    z-index: 2;
 }
 
 .home>h1 {
-    color: var(--clr-grey-8);
+    z-index: 2;
+    color: var(--clr-white);
     text-align: center;
 }
 
@@ -170,8 +184,9 @@ p {
 /* button on home page */
 
 .Tilt {
-    height: 30vh;
-    width: 30vh;
+    height: 10vh;
+    width: 10vh;
+    cursor: pointer;
     transform-style: preserve-3d;
 }
 
@@ -183,5 +198,99 @@ p {
     align-items: center;
     justify-content: center;
     background: rgba(51, 35, 93, 0.55);
-    border-radius: 10px;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 2rem;
+    border-bottom-left-radius: 1rem;
+}
+
+.operation-btn>* {
+    font-size: 5rem;
+    color: var(--clr-white);
+}
+
+@media screen and (min-width: 800px) {
+    html {
+        font-size: 16px;
+    }
+    .Tilt {
+        height: 30vh;
+        width: 30vh;
+    }
+}
+
+input {
+    font-size: 5rem;
+    border-radius: 1rem;
+    border: 1px solid var(--clr-purple-0);
+    width: 25vw;
+    padding: 1rem;
+    text-align: center;
+    outline: none;
+    background: var(--clr-purple-3);
+    color: var(--clr-purple-0);
+    cursor: pointer;
+}
+
+.btn-operation {
+    padding: 2rem 2.5rem;
+    font-size: 2rem;
+    border-radius: 1rem 2rem;
+    background: #5f30e6;
+    border: none;
+    margin-bottom: 1rem;
+    color: #d7cbf7;
+    cursor: pointer;
+}
+
+.layout {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.number-inputs {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.quantity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button-div {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem;
+    font-size: 3rem;
+    color: var(--clr-purple-3);
+}
+
+.button-div * {
+    cursor: pointer;
+}
+
+
+/* it will support chrome and firefox */
+
+.number-inputs input[type="number"]::-webkit-inner-spin-button,
+.number-inputs input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.answer-div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
 }

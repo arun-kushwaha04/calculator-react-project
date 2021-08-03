@@ -5,6 +5,8 @@ const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
   const [firstNumber, setFirstNumber] = useState(0);
   const [secondNumber, setSecondNumber] = useState(0);
+  const [operator, setOperator] = useState("Adding");
+  const [answer, setAnswer] = useState(0);
 
   return (
     <AppContext.Provider
@@ -13,6 +15,10 @@ const AppProvider = ({ children }) => {
         setFirstNumber,
         secondNumber,
         setSecondNumber,
+        operator,
+        setOperator,
+        answer,
+        setAnswer,
       }}>
       {children}
     </AppContext.Provider>
