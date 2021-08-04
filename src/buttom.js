@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Button = ({ value, img }) => {
   return (
-    <Link to={`/${value}`}>
+    <Link to={`/calculator-react-project/${value}`}>
       <Tilt
         className="Tilt"
         options={{

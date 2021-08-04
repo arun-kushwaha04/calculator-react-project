@@ -9,7 +9,7 @@ function App() {
     <React.Fragment>
       <Particle />
       <Switch>
-        <Route exact path="/gh-pages-url" component={Home}></Route>
+        <Route exact path="/calculator-react-project/" component={Home}></Route>
         <Route
           path="/calculator-react-project/add"
           render={() => <Operation operation="Adding" />}
