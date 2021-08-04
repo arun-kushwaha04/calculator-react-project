@@ -67,7 +67,7 @@ export const Operation = ({ operation = "Adding" }) => {
         <title>{operation} - Calculator</title>
       </Helmet>
       <section className="layout">
-        <Link to="/">
+        <Link to="/calculator-react-project/">
           <FaHome className="home-icon" />
         </Link>
         <h1>{operation} Two Numbers</h1>
