@@ -1,14 +1,13 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import Particles from "react-particles-js";
-import { particleConfig } from "./particlesjs-config";
 import { Home } from "./home";
 import { Error } from "./error";
 import { Operation } from "./operation";
+import { Particle } from "./particle";
 function App() {
   return (
     <React.Fragment>
-      <Particles className="particles" params={particleConfig} />
+      <Particle />
       <Switch>
         <Route exact path="/" component={Home}></Route>
         <Route path="/add" render={() => <Operation operation="Adding" />} />
