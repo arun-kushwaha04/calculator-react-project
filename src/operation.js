@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
-import { FaMinusCircle, FaPlusCircle } from "react-icons/fa";
+import React, { useEffect, useRef } from "react";
+import { FaMinusCircle, FaPlusCircle, FaHome } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import { UseGlobalContext } from "./context";
 
-export const Operation = ({ operation }) => {
+export const Operation = ({ operation = "Adding" }) => {
   const {
     firstNumber,
     secondNumber,
@@ -14,7 +15,15 @@ export const Operation = ({ operation }) => {
     setAnswer,
   } = UseGlobalContext();
 
-  useEffect(() => setOperator(operation), [operation, setOperator]);
+  const ref1 = useRef(null);
+
+  useEffect(() => {
+    setOperator(operation);
+    if (operation === "Dividing") {
+      setFirstNumber(1);
+      setSecondNumber(1);
+    }
+  }, [operation, setFirstNumber, setOperator, setSecondNumber]);
   useEffect(() => {
     switch (operator) {
       case "Adding":
@@ -27,7 +36,12 @@ export const Operation = ({ operation }) => {
         setAnswer(firstNumber * secondNumber);
         break;
       case "Dividing":
-        setAnswer(firstNumber - secondNumber);
+        if (secondNumber === 0) {
+          alert("Dividing By Zero Not Allowed");
+          setAnswer("infinity");
+        } else {
+          setAnswer(parseFloat(firstNumber / secondNumber));
+        }
         break;
       default:
         setFirstNumber(0);
@@ -43,8 +57,12 @@ export const Operation = ({ operation }) => {
     setSecondNumber,
     setAnswer,
   ]);
+
   return (
     <section className="layout">
+      <Link to="/">
+        <FaHome className="home-icon" />
+      </Link>
       <h1>{operation} Two Numbers</h1>
 
       <div className="number-inputs">
@@ -54,9 +72,9 @@ export const Operation = ({ operation }) => {
             placeholder="0"
             value={firstNumber}
             onChange={(e) => {
-              console.log(e.target);
-              setFirstNumber(e.target.value);
+              setFirstNumber(parseInt(e.target.value));
             }}
+            ref={ref1}
           />
           <div className="button-div">
             <FaMinusCircle
@@ -77,7 +95,7 @@ export const Operation = ({ operation }) => {
             type="number"
             placeholder="0"
             value={secondNumber}
-            onChange={(e) => setSecondNumber(e.target.value)}
+            onChange={(e) => setSecondNumber(parseInt(e.target.value))}
           />
           <div className="button-div">
             <FaMinusCircle
@@ -96,7 +114,7 @@ export const Operation = ({ operation }) => {
 
       <div className="answer-div">
         <button className="btn-operation">Answer</button>
-        <h1>{answer}</h1>
+        <h2>{answer}</h2>
       </div>
     </section>
   );

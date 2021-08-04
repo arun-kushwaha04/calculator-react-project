@@ -233,8 +233,8 @@ input {
 }
 
 .btn-operation {
-    padding: 2rem 2.5rem;
-    font-size: 2rem;
+    padding: 1rem 1.5rem;
+    font-size: 1.5rem;
     border-radius: 1rem 2rem;
     background: #5f30e6;
     border: none;
@@ -250,6 +250,10 @@ input {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+}
+
+.layout>h1 {
+    color: #fff;
 }
 
 .number-inputs {
@@ -293,4 +297,13 @@ input {
     align-items: center;
     justify-content: center;
     gap: 2rem;
+}
+
+.home-icon {
+    position: absolute;
+    font-size: 3rem;
+    color: var(--clr-purple-0);
+    top: 1rem;
+    left: 1rem;
+    cursor: pointer;
 }

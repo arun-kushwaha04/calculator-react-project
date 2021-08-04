@@ -11,7 +11,19 @@ function App() {
       <Particles className="particles" params={particleConfig} />
       <Switch>
         <Route exact path="/" component={Home}></Route>
-        <Route exact path="/a" component={Operation} />
+        <Route path="/add" render={() => <Operation operation="Adding" />} />
+        <Route
+          path="/subtract"
+          render={() => <Operation operation="Subtracting" />}
+        />
+        <Route
+          path="/multiply"
+          render={() => <Operation operation="Multiplying" />}
+        />
+        <Route
+          path="/divide"
+          render={() => <Operation operation="Dividing" />}
+        />
         <Route path="*" component={Error}></Route>
       </Switch>
     </React.Fragment>

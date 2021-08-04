@@ -8,10 +8,10 @@ export const Home = () => {
       <section className="home">
         <h1>CALCULATOR</h1>
         <div>
-          <Button value="Adittion" img={<FaPlus />} />
-          <Button value="Adittion" img={<FaMinus />} />
-          <Button value="Adittion" img={<FaTimes />} />
-          <Button value="Adittion" img={<FaDivide />} />
+          <Button value="add" img={<FaPlus />} />
+          <Button value="subtract" img={<FaMinus />} />
+          <Button value="multiply" img={<FaTimes />} />
+          <Button value="divide" img={<FaDivide />} />
         </div>
       </section>
     </>
