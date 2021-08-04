@@ -79,18 +79,21 @@ export const Operation = ({ operation = "Adding" }) => {
               placeholder="0"
               value={firstNumber}
               onChange={(e) => {
+                e.preventDefault();
                 setFirstNumber(parseInt(e.target.value));
               }}
               ref={ref1}
             />
             <div className="button-div">
               <FaMinusCircle
-                onClick={() => {
+                onClick={(e) => {
+                  e.preventDefault();
                   setFirstNumber(firstNumber - 1);
                 }}
               />
               <FaPlusCircle
-                onClick={() => {
+                onClick={(e) => {
+                  e.preventDefault();
                   setFirstNumber(firstNumber + 1);
                 }}
               />
@@ -102,16 +105,21 @@ export const Operation = ({ operation = "Adding" }) => {
               type="number"
               placeholder="0"
               value={secondNumber}
-              onChange={(e) => setSecondNumber(parseInt(e.target.value))}
+              onChange={(e) => {
+                e.preventDefault();
+                setSecondNumber(parseInt(e.target.value));
+              }}
             />
             <div className="button-div">
               <FaMinusCircle
-                onClick={() => {
+                onClick={(e) => {
+                  e.preventDefault();
                   setSecondNumber(secondNumber - 1);
                 }}
               />
               <FaPlusCircle
-                onClick={() => {
+                onClick={(e) => {
+                  e.preventDefault();
                   setSecondNumber(secondNumber + 1);
                 }}
               />
