@@ -9,18 +9,21 @@ function App() {
     <React.Fragment>
       <Particle />
       <Switch>
-        <Route exact path="/" component={Home}></Route>
-        <Route path="/add" render={() => <Operation operation="Adding" />} />
+        <Route exact path="/gh-pages-url" component={Home}></Route>
         <Route
-          path="/subtract"
+          path="/calculator-react-project/add"
+          render={() => <Operation operation="Adding" />}
+        />
+        <Route
+          path="/calculator-react-project/subtract"
           render={() => <Operation operation="Subtracting" />}
         />
         <Route
-          path="/multiply"
+          path="/calculator-react-project/multiply"
           render={() => <Operation operation="Multiplying" />}
         />
         <Route
-          path="/divide"
+          path="/calculator-react-project/divide"
           render={() => <Operation operation="Dividing" />}
         />
         <Route path="*" component={Error}></Route>
